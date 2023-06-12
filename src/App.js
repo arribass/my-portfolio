@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <p>Prueba para quitar mi workflow desde DEVd</p>
+        <p>Prueba para quitar mi workflow desde Main</p>
         <a
           className="App-link"
           href="https://reactjs.org"
