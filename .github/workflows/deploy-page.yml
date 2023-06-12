@@ -27,7 +27,7 @@ jobs:
       run: |
         git config user.email "adri47arribas@gmail.com"
         git config user.name "arribass"
-        git remote set-url origin https://arribass:${{ secrets.my-portfolio }}@github.com/arribass/my-portfolio.git
+        git remote set-url origin https://arribass:${{ secrets.other }}@github.com/arribass/my-portfolio.git
     - name: Deploy
       run: npm run deploy
       env:
