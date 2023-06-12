@@ -1,4 +1,4 @@
-name: Environment variables
+name: Manual Workflow
 on:
   workflow_dispatch:
 
@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Print variables
         env:
-          MY_NAME: ${{ github.actor }}
-          MY_EMAIL: ${{ github.actor }}@users.noreply.github.com
-          MY_SECRET: ${{ secrets.my-portfolio }}
+          MY_NAME: ${{ secrets.MY_NAME }}
+          MY_EMAIL: ${{ secrets.MY_EMAIL }}
+          MY_SECRET: ${{ secrets.MY_PORTFOLIO }}
         run: |
           echo "Name: $MY_NAME"
           echo "Email: $MY_EMAIL"
