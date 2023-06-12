@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: Print variables
         env:
-          MY_NAME: ${{ secrets.MY_NAME }}
-          MY_EMAIL: ${{ secrets.MY_EMAIL }}
+          MY_NAME: $MY_NAME
+          MY_EMAIL: $MY_EMAIL
           MY_SECRET: ${{ secrets.MY_PORTFOLIO }}
         run: |
           echo "Name: $MY_NAME"
