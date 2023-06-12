@@ -30,5 +30,3 @@ jobs:
         git remote set-url origin https://arribass:${{ secrets.other }}@github.com/arribass/my-portfolio.git
     - name: Deploy
       run: npm run deploy
-      env:
-        GH_TOKEN: ${{ secrets.GH_PAT }}
