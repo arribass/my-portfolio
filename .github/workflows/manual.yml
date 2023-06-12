@@ -1,0 +1,13 @@
+name: Manual Workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  print_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variables
+        run: |
+          echo "Name: $MY_NAME"
+          echo "Email: $MY_EMAIL"
+          echo "Secret: $MY_SECRET"
