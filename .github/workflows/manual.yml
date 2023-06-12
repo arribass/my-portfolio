@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print variables
-        env:
-          MY_NAME: $MY_NAME
-          MY_EMAIL: $MY_EMAIL
-          MY_SECRET: ${{ secrets.MY_PORTFOLIO }}
         run: |
           echo "Name: $MY_NAME"
           echo "Email: $MY_EMAIL"
