@@ -1,51 +1,89 @@
-/* src/App.css */
+/* Layout general */
 .App {
-  text-align: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
   font-family: 'Segoe UI', sans-serif;
-  padding: 40px 20px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
 }
 
-.App-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* 🌟 Top bar sticky */
+.top-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #2a5298;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 1000;
 }
 
-.App-header p {
-  font-size: 1.2rem;
+.top-bar nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-bar nav a:hover {
+  text-decoration: underline;
+}
+
+/* 🃏 Card central */
+.main-content {
+  max-width: 900px;
+  margin: 80px auto 40px auto; /* deja espacio para top-bar */
+  padding: 0 20px;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
   margin-bottom: 40px;
 }
 
+.profile-card h2 {
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 📦 Grid de proyectos */
 .projects-grid {
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
 }
 
 .project-card {
-  background: rgba(255,255,255,0.1);
+  background: #ffffff;
   border-radius: 12px;
   padding: 20px;
   width: 220px;
-  text-align: left;
-  color: white;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  background: rgba(255,255,255,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.project-card h2 {
-  margin: 0 0 10px;
-}
-
-.project-card p {
-  margin: 0;
-  font-size: 0.95rem;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
 }

@@ -1,33 +1,49 @@
-// src/App.js
 import React from 'react';
 import './App.css';
-
-const projects = [
-  { name: 'Salesforce Notes', description: 'Apuntes y quizzes de Salesforce', link: '#' },
-  { name: 'Portfolio', description: 'Mis proyectos en React y más', link: '#' },
-  { name: 'Quiz App', description: 'Prueba tus conocimientos con quizzes interactivos', link: '#' },
-];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>👋 Hola, soy Adrian</h1>
-        <p>Bienvenido a mi portfolio de proyectos React</p>
+      {/* 🌟 Top bar sticky */}
+      <header className="top-bar">
+        <h1>Adrian Arribas</h1>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-        <div className="projects-grid">
-          {projects.map((proj, idx) => (
-            <a key={idx} href={proj.link} className="project-card">
-              <h2>{proj.name}</h2>
-              <p>{proj.description}</p>
-            </a>
-          ))}
+      {/* 🃏 Card central con info */}
+      <main className="main-content">
+        <div className="profile-card" id="about">
+          <h2>Hola, soy Adrian</h2>
+          <p>
+            Desarrollador Salesforce y React, creando apps y herramientas
+            interactivas. Me gusta documentar, hacer quizzes y probar cosas nuevas.
+          </p>
         </div>
 
-        <footer style={{ marginTop: '40px', opacity: 0.7 }}>
-          © {new Date().getFullYear()} Adrian Arribas
-        </footer>
-      </header>
+        {/* 📦 Proyectos */}
+        <section id="projects" className="projects-grid">
+          <div className="project-card">
+            <h3>Salesforce Notes</h3>
+            <p>Apuntes y quizzes de Salesforce</p>
+          </div>
+          <div className="project-card">
+            <h3>Portfolio</h3>
+            <p>Mis proyectos en React y más</p>
+          </div>
+          <div className="project-card">
+            <h3>Quiz App</h3>
+            <p>Prueba tus conocimientos con quizzes interactivos</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        © {new Date().getFullYear()} Adrian Arribas
+      </footer>
     </div>
   );
 }
