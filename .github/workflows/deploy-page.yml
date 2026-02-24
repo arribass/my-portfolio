@@ -33,8 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist   # 👈 si es Vite
-          # path: build  # 👈 si es Create React App
+          path: build  # 👈 si es Create React App
 
   deploy:
     needs: build
