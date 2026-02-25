@@ -88,9 +88,8 @@ function App() {
     </div>
 
   </div>
-</header>
-
-      <main className="main-content">
+    </header>
+    <main className="main-content">
       <Section id="about">
         <AboutSection />
       </Section>
@@ -199,13 +198,13 @@ function App() {
       </div>
       {/* <img src="https://github-readme-stats.vercel.app/api/pin/?username=arribass&repo=flow-Action-Record-Validator" /> */}
     </Section>
-      </main>
+    </main>
 
-      <footer className="footer">
+    <footer className="footer">
         © {new Date().getFullYear()} Adrian Arribas
-      </footer>
+    </footer>
 
-      {selectedProject && (
+    {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedProject.title}</h2>
@@ -219,17 +218,10 @@ function App() {
               ))}
             </div>
 
-      <button
-        className="close-btn"
-        onClick={() => setSelectedProject(null)}
-      >
-        Cerrar
-      </button>
-    </div>
-  </div>
-)}
-    </div>
-  );
+      <button className="close-btn" onClick={() => setSelectedProject(null)}> Cerrar </button>
+        </div>
+      </div>)}
+    </div>);
 }
 
 export default App;
