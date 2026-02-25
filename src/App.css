@@ -1,11 +1,90 @@
-/* Layout general */
+/* ============================= */
+/* Layout base */
+/* ============================= */
+
 .App {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f0f4f8;
+  min-height: 100vh;
+  background: #f4f6f9;
   color: #333;
-  scroll-behavior: smooth; /* animación al hacer click en links */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* 🚧 Under Construction Background */
+/* ============================= */
+
+.under-construction::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+
+  background: repeating-linear-gradient(
+    45deg,
+    #f7c948,
+    #f7c948 40px,
+    #1e1e1e 40px,
+    #1e1e1e 80px
+  );
+
+  opacity: 0.06;
+  animation: moveStripes 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveStripes {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120px);
+  }
+}
+
+/* ============================= */
+/* Contenido */
+/* ============================= */
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-section {
+  margin-bottom: 50px;
+}
+
+.about-section h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Card central */
+
+.construction-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.construction-card h2 {
+  margin-bottom: 15px;
 }
 
 /* 🌟 Top bar sticky */
