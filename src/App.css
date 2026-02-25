@@ -374,3 +374,108 @@
   font-weight: 600;
   color: #2a5298;
 }
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+
+/* ============================= */
+/* ABOUT SECTION PRO */
+/* ============================= */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.about-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-image {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Imagen circular elegante */
+.profile-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #2a5298;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+/* Hover efecto sutil premium */
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Tags tech modernas */
+.about-tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.about-tags span {
+  background: white;
+  border: 1px solid #2a5298;
+  color: #2a5298;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.about-tags span:hover {
+  background: #2a5298;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+}
