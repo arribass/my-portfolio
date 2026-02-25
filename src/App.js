@@ -1,4 +1,5 @@
 import React, { useEffect,useState, useRef } from 'react';
+import AboutSection from "./components/AboutSection";
 import { FaGithub } from "react-icons/fa";
 import './App.css';
 
@@ -92,37 +93,10 @@ function App() {
 
       <main className="main-content">
       <Section id="about">
-        <div className="about-container">
-          <div className="about-text">
-            <h3>Hola, soy Adrián 👋</h3>
-            <p>
-              Soy <strong>Analista y Developer de Salesforce en Seidor</strong>, especializado en
-              desarrollo con Apex, LWC, integraciones y arquitectura en la plataforma.
-            </p>
-            <p>
-              Me apasiona construir soluciones limpias, escalables y bien estructuradas.
-              Disfruto tanto la parte técnica como el diseño de soluciones.
-            </p>
-            <div className="about-tags">
-              <span>Apex</span>
-              <span>LWC</span>
-              <span>Integraciones</span>
-              <span>React</span>
-            </div>
-          </div>
-          <div className="about-card">
-            <h4>Actualmente</h4>
-            <p>🔹 Salesforce Developer @ Seidor</p>
-            <p>🔹 Construyendo ForceNotes</p>
-            <p>🔹 Mejorando mi stack Frontend</p>
-          </div>
-
-        </div>
+        <AboutSection />
       </Section>
-
-        <Section id="projects" title="Proyectos">
+      <Section id="projects" title="Proyectos">
           <div className="projects-grid">
-
             <div className="project-card">
               <h3>Portfolio v1</h3>
               <p>Primera versión de mi portfolio personal.</p>
