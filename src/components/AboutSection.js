@@ -26,7 +26,7 @@ function AboutSection() {
       {/* Imagen izquierda */}
       <div className="about-image">
         <img
-          src="/adrian.jpg" // luego pones tu foto real
+          src={`${process.env.PUBLIC_URL}/Adrian_Arribas.png`} 
           alt="Adrián Arribas"
           className="profile-image"
         />

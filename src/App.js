@@ -58,22 +58,21 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   return (
     <div className="App">
+    <header className="top-bar">
+    <div className="top-bar-inner">
 
-<header className="top-bar">
-  <div className="top-bar-inner">
+      {/* LEFT - Name */}
+      <div className="nav-left">
+        <span className="brand">Adrián Arribas</span>
+      </div>
 
-    {/* LEFT - Name */}
-    <div className="nav-left">
-      <span className="brand">Adrián Arribas</span>
-    </div>
-
-    {/* CENTER - Navigation */}
-    <nav className="nav-center">
-      <a href="#about">Sobre mí</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#techstack">Tech stack</a>
-      <a href="#code">Mejores repos</a>
-    </nav>
+      {/* CENTER - Navigation */}
+      <nav className="nav-center">
+        <a href="#about">Sobre mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#techstack">Tech stack</a>
+        <a href="#code">Mejores repos</a>
+      </nav>
 
     {/* RIGHT - GitHub */}
     <div className="nav-right">
@@ -175,7 +174,7 @@ function App() {
 
       </div>
     </Section>
-    <Section id="code" title="Código Fuente">
+    <Section id="code" title="Salesforce Utilities">
       <div className="repo-card">
         <div className="repo-header">
           <h3>Flow Action Record Validator</h3>
