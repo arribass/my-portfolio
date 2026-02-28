@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./App.css";
+
 import AboutSection from "./components/AboutSection";
 import ProjectCard from "./components/ProjectCard";
+import TechBadge from "./components/TechBadge";
 // import Section from "./components/Section";
 
 
 import { FaGithub } from "react-icons/fa";
-import './App.css';
 
 import {
   FaReact,
@@ -205,6 +206,13 @@ function App() {
       </div>
       {/* <img src="https://github-readme-stats.vercel.app/api/pin/?username=arribass&repo=flow-Action-Record-Validator" /> */}
     </Section>
+    {/* section de tech badges */}
+    <section>
+
+      <TechBadge label="Apex" variant="backend" />
+      <TechBadge label="React" variant="frontend" />
+      <TechBadge label="Flow" />
+    </section>
     </main>
 
     <footer className="footer">

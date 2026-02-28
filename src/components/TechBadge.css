@@ -1,0 +1,33 @@
+.tech-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 4px;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+/* Variante por defecto */
+.tech-badge.default {
+  background: #1f1f1f;
+  color: white;
+  border: 1px solid #333;
+}
+
+/* Variante backend */
+.tech-badge.backend {
+  background: #16213e;
+  color: #00d8ff;
+}
+
+/* Variante frontend */
+.tech-badge.frontend {
+  background: #2c1a4d;
+  color: #b892ff;
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+}
