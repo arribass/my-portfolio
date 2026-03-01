@@ -4,6 +4,8 @@ import "./App.css";
 import AboutSection from "./components/AboutSection";
 import ProjectCard from "./components/ProjectCard";
 import TechBadge from "./components/TechBadge";
+import Timeline from "./components/Timeline";
+import ProjectsSection from "./components/ProjectsSection";
 // import Section from "./components/Section";
 
 
@@ -83,6 +85,19 @@ function Section({ id, title, children }) {
 // }
 // export default App;
 
+const myTimeline = [
+{ title: "Aprendí React", date: "2022", description: "Primer proyecto personal en React." },
+{ title: "Salesforce Developer", date: "2023", description: "Comencé a trabajar con Apex y LWC." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+{ title: "Portfolio Online", date: "2024", description: "Desarrollé mi portfolio con React." },
+
+];
+
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   return (
@@ -122,6 +137,7 @@ function App() {
       <Section id="about">
         <AboutSection />
       </Section>
+      {/* Proyectos */}
       <Section id="projects" title="Proyectos">
         <div className="projects-grid">
 
@@ -138,86 +154,101 @@ function App() {
           />
 
         </div>
+      <ProjectsSection></ProjectsSection>
       </Section>
+      {/* Tech Stack */}
+      <Section id="techstack" title="Tech Stack">
+        <div className="tech-grid">
 
-    <Section id="techstack" title="Tech Stack">
-      <div className="tech-grid">
+          <div className="tech-card">
+            <SiSalesforce size={40} />
+            <h4>Salesforce</h4>
+            <p>Apex, LWC, SOQL, Integrations, Data Modeling</p>
+          </div>
 
-        <div className="tech-card">
-          <SiSalesforce size={40} />
-          <h4>Salesforce</h4>
-          <p>Apex, LWC, SOQL, Integrations, Data Modeling</p>
+          <div className="tech-card">
+            <FaReact size={40} />
+            <h4>React</h4>
+            <p>Hooks, Components, State Management</p>
+          </div>
+
+          <div className="tech-card">
+            <FaGitAlt size={40} />
+            <h4>Git & CI/CD</h4>
+            <p>GitHub Actions, branching strategies</p>
+          </div>
+
+          {/* <div className="tech-card">
+            <SiJavascript size={40} />
+            <h4>JavaScript</h4>
+            <p>ES6+, Async/Await, Clean Architecture</p>
+          </div>
+
+          <div className="tech-card">
+            <SiTypescript size={40} />
+            <h4>TypeScript</h4>
+            <p>Type-safe front-end development</p>
+          </div>
+
+          <div className="tech-card">
+            <FaNodeJs size={40} />
+            <h4>Node.js</h4>
+            <p>APIs & Backend basics</p>
+          </div> */}
+
+
         </div>
+      </Section>
+      {/* Timeline */}
+    <div>
+      <h2 style={{ textAlign: "center" }}>Mi Timeline</h2>
+      <Timeline events={myTimeline} />
+    </div>
 
-        <div className="tech-card">
-          <FaReact size={40} />
-          <h4>React</h4>
-          <p>Hooks, Components, State Management</p>
+      <Section id="code" title="Salesforce Utilities">
+        <div className="repo-card">
+          <div className="repo-header">
+            <h3>Flow Action Record Validator</h3>
+            <span className="repo-tag">Salesforce</span>
+          </div>
+          <p>
+            Custom Flow Action to validate record conditions dynamically.
+            Built for Salesforce environments where declarative logic needs
+            controlled validation.
+          </p>
+          <TechBadge label="Apex" variant="backend" />
+          <TechBadge label="Flow" variant="frontend" />
+          <div className="repo-footer">
+            <a
+              href="https://github.com/arribass/flow-Action-Record-Validator"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver en GitHub →
+            </a>
+          </div>
+
         </div>
-
-        <div className="tech-card">
-          <SiJavascript size={40} />
-          <h4>JavaScript</h4>
-          <p>ES6+, Async/Await, Clean Architecture</p>
+        {/* <img src="https://github-readme-stats.vercel.app/api/pin/?username=arribass&repo=flow-Action-Record-Validator" /> */}
+      </Section>
+      <footer className="footer">
+        <div className="footer-content">
+          <p>© {new Date().getFullYear()} Adrian Arribas</p>
+          <div className="contact">
+            <h4>¡Contáctame!</h4>
+            <p>No dudes en ponerte en contacto conmigo a través de:</p>
+            <a href="mailto:adri47arribas@gmail.com">Correo electrónico</a> |{" "}
+            <a
+              href="https://www.linkedin.com/in/arribas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
-
-        <div className="tech-card">
-          <SiTypescript size={40} />
-          <h4>TypeScript</h4>
-          <p>Type-safe front-end development</p>
-        </div>
-
-        <div className="tech-card">
-          <FaNodeJs size={40} />
-          <h4>Node.js</h4>
-          <p>APIs & Backend basics</p>
-        </div>
-
-        <div className="tech-card">
-          <FaGitAlt size={40} />
-          <h4>Git & CI/CD</h4>
-          <p>GitHub Actions, branching strategies</p>
-        </div>
-
-      </div>
-    </Section>
-    <Section id="code" title="Salesforce Utilities">
-      <div className="repo-card">
-        <div className="repo-header">
-          <h3>Flow Action Record Validator</h3>
-          <span className="repo-tag">Salesforce</span>
-        </div>
-        <p>
-          Custom Flow Action to validate record conditions dynamically.
-          Built for Salesforce environments where declarative logic needs
-          controlled validation.
-        </p>
-
-        <div className="repo-footer">
-          <a
-            href="https://github.com/arribass/flow-Action-Record-Validator"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver en GitHub →
-          </a>
-        </div>
-
-      </div>
-      {/* <img src="https://github-readme-stats.vercel.app/api/pin/?username=arribass&repo=flow-Action-Record-Validator" /> */}
-    </Section>
-    {/* section de tech badges */}
-    <section>
-
-      <TechBadge label="Apex" variant="backend" />
-      <TechBadge label="React" variant="frontend" />
-      <TechBadge label="Flow" />
-    </section>
+      </footer>
     </main>
-
-    <footer className="footer">
-        © {new Date().getFullYear()} Adrian Arribas
-    </footer>
 
     {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
