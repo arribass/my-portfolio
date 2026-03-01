@@ -14,13 +14,13 @@ import { FaGithub } from "react-icons/fa";
 import {
   FaReact,
   FaGitAlt,
-  FaNodeJs,
+  // FaNodeJs,
 } from "react-icons/fa";
 
 import {
-  SiJavascript,
+  // SiJavascript,
   SiSalesforce,
-  SiTypescript,
+  // SiTypescript,
 } from "react-icons/si";
 
 /**
