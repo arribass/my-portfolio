@@ -6,6 +6,7 @@ const TimelineItem = ({ event, index }) => {
   const itemRef = useRef(null);
 
   useEffect(() => {
+    const currentItem = itemRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -16,13 +17,13 @@ const TimelineItem = ({ event, index }) => {
       { threshold: 0.2 }
     );
 
-    if (itemRef.current) {
-      observer.observe(itemRef.current);
+    if (currentItem) {
+      observer.observe(currentItem);
     }
 
     return () => {
-      if (itemRef.current) {
-        observer.unobserve(itemRef.current);
+      if (currentItem) {
+        observer.unobserve(currentItem);
       }
     };
   }, []);
