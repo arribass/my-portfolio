@@ -10,18 +10,12 @@ import { translations, timelineTranslations, projectsTranslations } from "./tran
 
 
 import {
-  FaReact,
-  FaGitAlt,
-  FaToolbox,
-  FaGraduationCap,
-  FaRocket,
-  FaSalesforce,
   FaGithub
 } from "react-icons/fa";
 
-import {
-  SiSalesforce,
-} from "react-icons/si";
+// import {
+//   SiSalesforce,
+// } from "react-icons/si";
 
 /**
  * Componente Section que:
