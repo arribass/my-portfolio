@@ -1,56 +1,25 @@
 import React, { useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import "./ProjectsSection.css";
 
-const projectsData = [
-  {
-    title: "Salesforce Notes",
-    description: "Documentación técnica para Salesforce.",
-    tech: ["Apex", "Flow"],
-    link: "https://github.com/arribass/salesforce-notes",
-  },
-  {
-    title: "Quiz App",
-    description: "App React con preguntas aleatorias.",
-    tech: ["React", "JavaScript"],
-    link: "https://github.com/arribass/quiz-app",
-  },
-  {
-    title: "AI Image Generator",
-    description: "Genera imágenes con IA según prompt.",
-    tech: ["Python", "AI"],
-    link: "https://github.com/arribass/ai-image-gen",
-  },
-  {
-    title: "Network Monitor",
-    description: "Monitor de redes y hardware.",
-    tech: ["Hardware", "Networking"],
-    link: "https://github.com/arribass/network-monitor",
-  },
-];
-
-const categories = ["Todos", "Apex / Flow", "React / JS", "IA", "Hardware / Redes"];
-
-export default function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
+export default function ProjectsSection({ lang, t, projects, tModal }) {
+  const categories = [t.categories.all, "Salesforce", "Web Apps"];
+  const [activeCategory, setActiveCategory] = useState(t.categories.all);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects =
-    activeCategory === "Todos"
-      ? projectsData
-      : projectsData.filter((p) =>
-          p.tech.some((t) => {
-            if (activeCategory === "Apex / Flow") return ["Apex", "Flow"].includes(t);
-            if (activeCategory === "React / JS") return ["React", "JavaScript"].includes(t);
-            if (activeCategory === "IA") return ["AI", "Python"].includes(t);
-            if (activeCategory === "Hardware / Redes") return ["Hardware", "Networking"].includes(t);
+    activeCategory === t.categories.all
+      ? projects
+      : projects.filter((p) =>
+          p.tech.some((tech) => {
+            if (activeCategory === "Web Apps") return ["React", "Next.js", "Tailwind"].includes(tech);
+            if (activeCategory === "Salesforce") return ["Apex", "Flow", "Salesforce", "LWC"].includes(tech);
             return false;
           })
         );
 
   return (
     <section className="projects-section">
-      <h3>He aquí algunos de mis proyectos más destacables</h3>
-
       {/* 🔹 Categorías */}
       <div className="projects-categories">
         {categories.map((cat) => (
@@ -67,16 +36,73 @@ export default function ProjectsSection() {
       {/* 🔹 Grid de proyectos */}
       <div className="projects-grid">
         {filteredProjects.map((p, i) => (
-          <div key={i} className="project-card">
-            <h4>{p.title}</h4>
-            <p>{p.description}</p>
-            <a href={p.link} target="_blank" rel="noopener noreferrer">
-              <FaGithub style={{ marginRight: "6px" }} />
-              Ver en GitHub
-            </a>
+          <div key={i} className="project-card" onClick={() => setSelectedProject(p)}>
+            <div className="project-image">
+              <img src={`${process.env.PUBLIC_URL}/${p.image}`} alt={p.title} />
+              <div className="project-overlay">
+                <span>{lang === 'es' ? 'Ver detalles' : 'View details'}</span>
+              </div>
+            </div>
+            <div className="project-content">
+              <h4>{p.title}</h4>
+              <p>{p.description}</p>
+              <div className="project-tech-tags">
+                {p.tech.map(tech => <span key={tech} className="tech-tag">{tech}</span>)}
+              </div>
+              <a 
+                href={p.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="project-link"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {p.type === "github" ? <FaGithub /> : <FaExternalLinkAlt />}
+                <span>{p.type === "github" ? "GitHub" : "Demo"}</span>
+              </a>
+            </div>
           </div>
         ))}
       </div>
+
+      {/* 🔹 Modal Detail Page */}
+      {selectedProject && (
+        <div className="project-modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedProject(null)}>
+              <FaTimes />
+            </button>
+            
+            <div className="modal-body">
+              <div className="modal-image-col">
+                <img src={`${process.env.PUBLIC_URL}/${selectedProject.image}`} alt={selectedProject.title} />
+              </div>
+              
+              <div className="modal-info-col">
+                <h2>{selectedProject.title}</h2>
+                <div className="modal-tech-list">
+                  {selectedProject.tech.map(tech => <span key={tech} className="tech-tag">{tech}</span>)}
+                </div>
+                
+                <p className="modal-full-desc">{selectedProject.description}</p>
+                
+                <h3>{tModal.highlights}</h3>
+                <ul className="modal-features">
+                  {selectedProject.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+                
+                <div className="modal-actions">
+                  <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="modal-btn-primary">
+                    {selectedProject.type === "github" ? <FaGithub /> : <FaExternalLinkAlt />}
+                    <span>{selectedProject.type === "github" ? tModal.github : tModal.demo}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

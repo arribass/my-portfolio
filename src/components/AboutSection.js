@@ -1,7 +1,11 @@
 import React, { useEffect,useState, useRef } from 'react';
-function AboutSection() {
+import { SiSalesforce } from "react-icons/si";
+import { FaReact, FaGitAlt } from "react-icons/fa";
+
+function AboutSection({ t, lang }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,28 +27,59 @@ function AboutSection() {
       ref={ref}
       className={`about-container ${visible ? "fade-in" : ""}`}
     >
-      {/* Imagen izquierda */}
+      {/* Imagen izquierda con efecto Flip */}
       <div className="about-image">
-        <img
-          src={`${process.env.PUBLIC_URL}/Adrian_Arribas.png`} 
-          alt="Adrián Arribas"
-          className="profile-image"
-        />
+        <div 
+          className={`about-image-inner ${isFlipped ? 'is-flipped' : ''}`}
+          onClick={() => setIsFlipped(!isFlipped)}
+        >
+          <div className="about-image-front">
+            <img
+              src={`${process.env.PUBLIC_URL}/Adrian_Arribas.png`} 
+              alt={t.photoAlt}
+              className="profile-image"
+            />
+          </div>
+          <div className="about-image-back">
+            <img
+              src={`${process.env.PUBLIC_URL}/avatar.png`} 
+              alt={t.avatarAlt}
+              className="profile-image"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Texto derecha */}
       <div className="about-text">
-        <h3>Hola, soy Adrián 👋</h3>
+        <h3>{t.title}</h3>
 
         <p>
-          Soy <strong>Analista y Developer de Salesforce en Seidor</strong>,
-          especializado en desarrollo con Apex, LWC, integraciones y arquitectura.
+          <strong>{t.role}</strong>, {t.spec}
         </p>
 
-        <p>
-          Me apasiona construir soluciones limpias, escalables y bien estructuradas.
-          Disfruto tanto la parte técnica como el diseño de soluciones.
-        </p>
+        <p>{t.passion}</p>
+
+        {/* Tech Stack Integrado */}
+        <div className="tech-grid integrated">
+          <div className="tech-card">
+            <SiSalesforce size={24} />
+            <h4>Salesforce</h4>
+            <p>Apex, LWC, SOQL, Integrations</p>
+          </div>
+
+          <div className="tech-card">
+            <FaReact size={24} />
+            <h4>React</h4>
+            <p>Hooks, State, Components</p>
+          </div>
+
+          <div className="tech-card">
+            <FaGitAlt size={24} />
+            <h4>Git & CI/CD</h4>
+            <p>Actions, Branching</p>
+          </div>
+        </div>
 
         <div className="about-tags">
           <span>Apex</span>

@@ -2,6 +2,10 @@
 /* Layout base */
 /* ============================= */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -54,9 +58,9 @@
 .main-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 100px auto;
-  padding: 0 20px;
+  padding: 0 40px;
   text-align: center;
 }
 
@@ -87,95 +91,163 @@
   margin-bottom: 15px;
 }
 
-/* 🌟 Top bar sticky */
+/* 🌟 Modern Top Bar (Glassmorphism) */
 .top-bar {
-  position: sticky;
-  margin-left: auto;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: #007544;
-  color: white;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.top-bar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 8px 0;
 }
 
 .top-bar-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 20px;
-
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Nombre izquierda */
-.brand {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
-/* Centro */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.lang-switcher button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  color: #888;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lang-switcher button.active {
+  color: #1a2a6c;
+}
+
+.lang-switcher .separator {
+  color: #ddd;
+  font-weight: 400;
+}
+
+/* Brand / Name */
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+  color: #1a202c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #2a5298;
+  border-radius: 50%;
+}
+
+/* Navigation Links */
 .nav-center {
   display: flex;
-  gap: 30px;
+  gap: 32px;
 }
 
-/* Links */
-.nav-center a,
-.github-link {
-  color: white;
+.nav-center a {
+  color: #4a5568;
   text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 4px 0;
 }
 
-.nav-center a:hover,
-.github-link:hover {
-  opacity: 0.8;
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2a5298;
+  transition: width 0.3s ease;
 }
 
-/* Derecha */
-.nav-right {
+.nav-center a:hover {
+  color: #2a5298;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* GitHub Button */
+.github-link {
   display: flex;
   align-items: center;
-}
-
-/* Left nav */
-.nav-left a {
-  color: white;
-  margin-right: 20px;
+  gap: 8px;
+  background: #1a202c;
+  padding: 8px 18px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: 500;
-}
-
-/* Right nav */
-.github-link {
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.15);
-  padding: 6px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  transition: all 0.2s ease;
+  color: white !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .github-link:hover {
-  background: rgba(255,255,255,0.3);
+  background: #2d3748;
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.top-bar nav a {
-  color: white;
-  margin-left: 15px;
-  text-decoration: none;
-  font-weight: 500;
+/* Base adjustment for fixed header */
+.main-content {
+  padding-top: 100px !important;
 }
 
-.top-bar nav a:hover {
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .nav-center {
+    display: none; /* In a real app we'd add a hamburger menu, for now focus on desktop cleanup */
+  }
 }
 
 /* Secciones */
@@ -269,60 +341,7 @@
   }
 }
 
-/* ============================= */
-/* 📦 PROJECTS GRID */
-/* ============================= */
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.project-card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.project-card button {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 10px;
-  background: #2a5298;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.project-card button:hover {
-  background: #1e3c72;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* Styles removed - project styles moved to ProjectsSection.css */
 
 /* ============================= */
 /* 🪟 PROJECT MODAL */
@@ -380,9 +399,48 @@
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* 🧬 Tech Stack Integrado en About */
+.tech-grid.integrated {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.tech-grid.integrated .tech-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  text-align: left;
+}
+
+.tech-grid.integrated .tech-card h4 {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #1a202c;
+}
+
+.tech-grid.integrated .tech-card p {
+  font-size: 0.7rem;
+  margin: 0;
+  color: #718096;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tech-grid.integrated .tech-card svg {
+  color: #2a5298;
+  flex-shrink: 0;
 }
 
 .tech-card {
@@ -415,43 +473,138 @@
   }
 }
 
-.repo-card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  max-width: 700px;
-  margin: 40px auto;
+/* 🛠️ Salesforce Utilities - Terminal Style */
+.utilities-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1xN Layout */
+  gap: 32px;
+  margin-top: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.repo-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-}
-
-.repo-header {
+.repo-card.terminal {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.repo-card.terminal:hover {
+  transform: translateY(-8px);
+  border-color: #2a5298;
+  box-shadow: 0 15px 45px rgba(42, 82, 152, 0.2);
+}
+
+.repo-window-header {
+  background: #333;
+  padding: 10px 15px;
+  display: flex;
   align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #444;
 }
 
-.repo-tag {
-  background: #2a5298;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
+.repo-window-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
-.repo-footer {
-  margin-top: 20px;
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.window-title {
+  color: #888;
+  font-size: 0.75rem;
+  font-family: 'Fira Code', monospace;
+  margin-left: auto;
 }
 
-.repo-footer a {
+.repo-body {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.repo-card.terminal .repo-header h3 {
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+.repo-card.terminal .repo-tag {
+  background: rgba(42, 82, 152, 0.2);
+  color: #a0c4ff;
+  border: 1px solid rgba(42, 82, 152, 0.3);
+}
+
+.repo-terminal-content {
+  margin: 20px 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  text-align: left;
+}
+
+.repo-terminal-content p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.repo-terminal-content p:first-child,
+.repo-terminal-content p:nth-child(3) {
+  color: #27c93f; /* Green prompt */
+}
+
+.terminal-output {
+  color: #ddd;
+  padding-left: 15px;
+  margin-bottom: 10px !important;
+}
+
+.terminal-list {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 15px;
+}
+
+.terminal-list li {
+  color: #a0c4ff;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.repo-card.terminal .repo-badges {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.repo-card.terminal .repo-footer {
+  padding: 15px 24px;
+  background: #222;
+  border-top: 1px solid #333;
+  text-align: left;
+}
+
+.terminal-link {
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  color: #2a5298;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  display: block;
+  transition: color 0.2s;
+}
+
+.terminal-link:hover {
+  color: #27c93f;
 }
 
 .profile-image {
@@ -483,8 +636,34 @@
 
 .about-image {
   flex: 0 0 220px;
-  display: flex;
-  justify-content: center;
+  perspective: 1000px; /* Habilita 3D */
+  cursor: pointer;
+}
+
+.about-image-inner {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.about-image-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.about-image-front, .about-image-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Oculta la parte trasera durante el giro */
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+.about-image-back {
+  transform: rotateY(180deg);
 }
 
 /* Imagen circular elegante */
@@ -495,13 +674,11 @@
   border-radius: 50%;
   border: 3px solid #2a5298;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s ease;
+  display: block;
 }
 
-/* Hover efecto sutil premium */
-.profile-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+.about-image:hover .profile-image {
+  box-shadow: 0 20px 45px rgba(42, 82, 152, 0.3);
 }
 
 .about-text {
@@ -566,7 +743,7 @@
 }
 
 .footer-content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -588,84 +765,4 @@
   margin-bottom: 5px;
 }
 
-/* Timeline */
-.timeline-container {
-  position: relative;
-  padding: 60px 20px;
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: #2a5298;
-  z-index: 1;
-}
-
-.timeline-events {
-  display: flex;
-  gap: 80px; /* espacio entre eventos */
-  padding: 0 20px;
-  z-index: 2;
-}
-
-.timeline-event {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 180px;
-  text-align: center;
-  position: relative;
-}
-
-.event-dot {
-  width: 24px;
-  height: 24px;
-  background: #ffd700;
-  border-radius: 50%;
-  margin-bottom: 12px;
-  border: 3px solid #2a5298;
-  transition: transform 0.3s;
-}
-
-.timeline-event:hover .event-dot {
-  transform: scale(1.3);
-}
-
-.event-content h4 {
-  margin: 0 0 6px 0;
-  font-size: 16px;
-  color: #2a5298;
-}
-
-.event-date {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 4px;
-}
-
-.event-desc {
-  font-size: 14px;
-  color: #333;
-}
-
-/* Responsive: vertical en móvil */
-@media (max-width: 700px) {
-  .timeline-events {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .timeline-line {
-    top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-  }
-}
+/* Styles removed - timeline styles moved to Timeline.css */
