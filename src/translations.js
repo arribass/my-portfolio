@@ -148,7 +148,7 @@ export const projectsTranslations = {
       title: "Reusable Lookup Controller",
       description: "Componente LWC versátil para búsquedas dinámicas de registros en Salesforce con soporte multi-objeto.",
       tech: ["Apex", "LWC", "Salesforce"],
-      link: "https://github.com/arribass/reusableLookupController",
+      link: "https://github.com/arribass/reusable-lookup",
       image: "projects/reusable-lookup.png",
       type: "github",
       details: [
@@ -234,7 +234,7 @@ export const projectsTranslations = {
       title: "Reusable Lookup Controller",
       description: "Versatile LWC component for dynamic record searching in Salesforce with multi-object support.",
       tech: ["Apex", "LWC", "Salesforce"],
-      link: "https://github.com/arribass/reusableLookupController",
+      link: "https://github.com/arribass/reusable-lookup",
       image: "projects/reusable-lookup.png",
       type: "github",
       details: [
