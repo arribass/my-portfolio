@@ -57,7 +57,6 @@ html {
 
 .main-content {
   position: relative;
-  z-index: 2;
   max-width: 1200px;
   margin: 100px auto;
   padding: 0 40px;
@@ -217,26 +216,48 @@ html {
   width: 100%;
 }
 
-/* GitHub Button */
-.github-link {
+/* GitHub & CV Buttons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.github-link, .cv-link {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #1a202c;
   padding: 8px 18px;
   border-radius: 12px;
   text-decoration: none;
-  color: white !important;
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.github-link {
+  background: #1a202c;
+  color: white !important;
 }
 
 .github-link:hover {
   background: #2d3748;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cv-link {
+  background: white;
+  color: #2a5298 !important;
+  border: 1px solid rgba(42, 82, 152, 0.2);
+}
+
+.cv-link:hover {
+  background: #f8fafc;
+  border-color: #2a5298;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(42, 82, 152, 0.15);
 }
 
 /* Base adjustment for fixed header */

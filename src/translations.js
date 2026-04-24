@@ -5,7 +5,8 @@ export const translations = {
       experience: "Trayectoria",
       projects: "Proyectos",
       code: "Mejores repos",
-      source: "Código fuente"
+      source: "Código fuente",
+      cv: "Mi CV"
     },
     about: {
       title: "Hola, soy Adrián 👋",
@@ -53,7 +54,8 @@ export const translations = {
       experience: "Experience",
       projects: "Projects",
       code: "Best repos",
-      source: "Source code"
+      source: "Source code",
+      cv: "My CV"
     },
     about: {
       title: "Hi, I'm Adrián 👋",
@@ -126,7 +128,7 @@ export const projectsTranslations = {
       details: [
         "Sistema de gestión financiera con cálculo de valoración neta.",
         "Seguimiento detallado de la producción de instrumentos.",
-        "Gestión de inventario de maderas preciosas y hardware.",
+        "Gestión de inventario de maderas y hardware.",
         "Panel de administración con estadísticas en tiempo real."
       ]
     },
