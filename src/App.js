@@ -10,7 +10,8 @@ import { translations, timelineTranslations, projectsTranslations } from "./tran
 
 
 import {
-  FaGithub
+  FaGithub,
+  FaFilePdf
 } from "react-icons/fa";
 
 // import {
@@ -129,6 +130,15 @@ function App() {
 
           {/* RIGHT - GitHub */}
           <div className="nav-right">
+            <a
+              href={process.env.PUBLIC_URL + "/" + encodeURIComponent("CV Adrián Arribas 2024 EN.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cv-link"
+            >
+              <FaFilePdf />
+              <span>{t.nav.cv}</span>
+            </a>
             <a
               href="https://github.com/arribass/my-portfolio"
               target="_blank"

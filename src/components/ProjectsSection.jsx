@@ -18,6 +18,17 @@ export default function ProjectsSection({ lang, t, projects, tModal }) {
           })
         );
 
+  React.useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
+
   return (
     <section className="projects-section">
       {/* 🔹 Categorías */}
