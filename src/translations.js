@@ -26,8 +26,7 @@ export const translations = {
       categories: {
         all: "Todos",
         salesforce: "Salesforce",
-        frontend: "Frontend",
-        tools: "Herramientas"
+        webApps: "Web Apps"
       }
     },
     utilities: {
@@ -75,8 +74,7 @@ export const translations = {
       categories: {
         all: "All",
         salesforce: "Salesforce",
-        frontend: "Frontend",
-        tools: "Tools"
+        webApps: "Web Apps"
       }
     },
     utilities: {
@@ -101,16 +99,18 @@ export const translations = {
 
 export const timelineTranslations = {
   es: [
+    { title: "Grado en Ingeniería Informática", date: "2017", description: "Comencé mis estudios de Ingeniería Informática en la UPNA." },
     { title: "Primeros pasos en Programación", date: "2021", description: "Comencé mi viaje en el mundo del desarrollo explorando lógica y algoritmos básicos." },
-    { title: "Especialización en Salesforce", date: "2022", description: "Inicié mi carrera como desarrollador en el ecosistema Salesforce, dominando Apex, LWC y automatizaciones." },
-    { title: "Adopción de React & Frontend", date: "2023", description: "Expandí mis habilidades hacia el desarrollo web moderno, aprendiendo React para crear interfaces dinámicas." },
+    { title: "Especialización en Salesforce", date: "2022", description: "Inicié mi carrera como desarrollador en el ecosistema Salesforce, Apex, LWC y automatizaciones." },
+    { title: "Fundación de Arribas Guitars", date: "2023", description: "Comencé mi proyecto de Arribas Guitars para crear mi propia marca de guitarras eléctricas hechas a mano." },
     { title: "Workshop Intelligence Dashboard", date: "2024", description: "Lanzamiento de una plataforma completa de gestión para talleres, integrando Supabase y análisis financiero." },
     { title: "Showroom Digital Premium", date: "2024", description: "Desarrollo de una experiencia visual inmersiva para exhibición de productos artesanales de alta gama." },
   ],
   en: [
+    { title: "Computer Engineering Degree", date: "2017", description: "Started my Computer Engineering studies at UPNA." },
     { title: "First Steps in Programming", date: "2021", description: "I started my journey in the development world exploring basic logic and algorithms." },
-    { title: "Salesforce Specialization", date: "2022", description: "I began my career as a developer in the Salesforce ecosystem, mastering Apex, LWC, and automations." },
-    { title: "Adopting React & Frontend", date: "2023", description: "I expanded my skills towards modern web development, learning React to create dynamic interfaces." },
+    { title: "Salesforce Specialization", date: "2022", description: "I began my career as a developer in the Salesforce ecosystem, Apex, LWC, and automations." },
+    { title: "Arribas Guitars Foundation", date: "2023", description: "Started my Arribas Guitars project to create my own brand of handmade electric guitars." },
     { title: "Workshop Intelligence Dashboard", date: "2024", description: "Launched a complete workshop management platform, integrating Supabase and financial analysis." },
     { title: "Premium Digital Showroom", date: "2024", description: "Developed an immersive visual experience for displaying high-end handcrafted products." },
   ]

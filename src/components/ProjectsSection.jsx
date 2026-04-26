@@ -3,7 +3,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import "./ProjectsSection.css";
 
 export default function ProjectsSection({ lang, t, projects, tModal }) {
-  const categories = [t.categories.all, "Salesforce", "Web Apps"];
+  const categories = [t.categories.all, t.categories.salesforce, t.categories.webApps];
   const [activeCategory, setActiveCategory] = useState(t.categories.all);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -32,16 +32,18 @@ export default function ProjectsSection({ lang, t, projects, tModal }) {
   return (
     <section className="projects-section">
       {/* 🔹 Categorías */}
-      <div className="projects-categories">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={cat === activeCategory ? "active" : ""}
-            onClick={() => setActiveCategory(cat)}
-          >
-            {cat}
-          </button>
-        ))}
+      <div className="projects-filter-wrapper">
+        <div className="projects-categories">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={cat === activeCategory ? "active" : ""}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* 🔹 Grid de proyectos */}
