@@ -104,15 +104,15 @@ function App() {
           <div className="nav-left">
             <span className="brand">Adrián Arribas</span>
             <div className="lang-switcher">
-              <button 
-                className={lang === 'es' ? 'active' : ''} 
+              <button
+                className={lang === 'es' ? 'active' : ''}
                 onClick={() => setLang('es')}
               >
                 ES
               </button>
               <span className="separator">|</span>
-              <button 
-                className={lang === 'en' ? 'active' : ''} 
+              <button
+                className={lang === 'en' ? 'active' : ''}
                 onClick={() => setLang('en')}
               >
                 EN
@@ -164,10 +164,10 @@ function App() {
 
         {/* Proyectos */}
         <Section id="projects" title={t.projects.title}>
-          <ProjectsSection 
-            lang={lang} 
-            t={t.projects} 
-            projects={projectsTranslations[lang]} 
+          <ProjectsSection
+            lang={lang}
+            t={t.projects}
+            projects={projectsTranslations[lang]}
             tModal={translations[lang].modal}
           />
         </Section>
@@ -300,7 +300,7 @@ function App() {
               <p>{t.footer.desc}</p>
               <a href="mailto:adri47arribas@gmail.com">{t.footer.email}</a> |{" "}
               <a
-                href="https://www.linkedin.com/in/arribas/"
+                href="https://www.linkedin.com/in/adrian-arribas-garcia-5470791b4/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
