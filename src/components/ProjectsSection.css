@@ -3,37 +3,59 @@
   padding-bottom: 40px;
 }
 
+.projects-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .projects-categories {
   display: flex;
-  gap: 12px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 6px;
+  border-radius: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  gap: 4px;
 }
 
 .projects-categories button {
-  padding: 8px 20px;
-  border: 1px solid #e0e6ed;
-  border-radius: 30px;
-  background: white;
-  color: #555;
-  font-weight: 500;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 35px;
+  background: transparent;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  position: relative;
+  z-index: 1;
 }
 
 .projects-categories button.active {
-  background: #2a5298;
+  background: #1e3c72;
   color: white;
-  border-color: #2a5298;
-  box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+  box-shadow: 0 8px 20px rgba(30, 60, 114, 0.25);
 }
 
 .projects-categories button:hover:not(.active) {
-  background: #f8fafc;
-  transform: translateY(-2px);
-  border-color: #cbd5e1;
+  background: rgba(0, 0, 0, 0.03);
+  color: #1e3c72;
+}
+
+/* 🔹 Efecto de brillo sutil para el botón activo */
+.projects-categories button.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 35px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
 }
 
 .projects-grid {
