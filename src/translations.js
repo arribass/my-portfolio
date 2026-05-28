@@ -10,16 +10,21 @@ export const translations = {
     },
     about: {
       title: "Hola, soy Adrián 👋",
-      role: "Analista y Developer de Salesforce en Seidor",
+      role: "Analista y Developer de Salesforce en Nubestic",
       spec: "especializado en desarrollo con Apex, LWC, integraciones y arquitectura.",
-      passion: "Me apasiona construir soluciones limpias, escalables y bien estructuradas. Disfruto tanto la parte técnica como el diseño de soluciones.",
+      passion: "Me apasiona construir soluciones limpias, scalables y bien estructuradas. Disfruto tanto la parte técnica como el diseño de soluciones.",
       avatarAlt: "Avatar de Adrián",
       photoAlt: "Adrián Arribas"
     },
     experience: {
       title: "Mi Trayectoria",
       showMore: "Ver trayectoria completa ↓",
-      showLess: "Ver menos ↑"
+      showLess: "Ver menos ↑",
+      filters: {
+        all: "Todos",
+        work: "Laboral",
+        projects: "Proyectos"
+      }
     },
     projects: {
       title: "Proyectos",
@@ -58,7 +63,7 @@ export const translations = {
     },
     about: {
       title: "Hi, I'm Adrián 👋",
-      role: "Salesforce Analyst & Developer at Seidor",
+      role: "Salesforce Analyst & Developer at Nubestic",
       spec: "specializing in Apex development, LWC, integrations, and architecture.",
       passion: "I'm passionate about building clean, scalable, and well-structured solutions. I enjoy both the technical side and solution design.",
       avatarAlt: "Adrian's Avatar",
@@ -67,7 +72,12 @@ export const translations = {
     experience: {
       title: "My Experience",
       showMore: "Show full timeline ↓",
-      showLess: "Show less ↑"
+      showLess: "Show less ↑",
+      filters: {
+        all: "All",
+        work: "Work",
+        projects: "Projects"
+      }
     },
     projects: {
       title: "Projects",
@@ -99,20 +109,22 @@ export const translations = {
 
 export const timelineTranslations = {
   es: [
-    { title: "Grado en Ingeniería Informática", date: "2017", description: "Comencé mis estudios de Ingeniería Informática en la UPNA." },
-    { title: "Primeros pasos en Programación", date: "2021", description: "Comencé mi viaje en el mundo del desarrollo explorando lógica y algoritmos básicos." },
-    { title: "Especialización en Salesforce", date: "2022", description: "Inicié mi carrera como desarrollador en el ecosistema Salesforce, Apex, LWC y automatizaciones." },
-    { title: "Fundación de Arribas Guitars", date: "2023", description: "Comencé mi proyecto de Arribas Guitars para crear mi propia marca de guitarras eléctricas hechas a mano." },
-    { title: "Workshop Intelligence Dashboard", date: "2024", description: "Lanzamiento de una plataforma completa de gestión para talleres, integrando Supabase y análisis financiero." },
-    { title: "Showroom Digital Premium", date: "2024", description: "Desarrollo de una experiencia visual inmersiva para exhibición de productos artesanales de alta gama." },
+    { title: "Grado en Ingeniería Informática", date: "2017", description: "Comencé mis estudios de Ingeniería Informática en la UPNA.", category: "work" },
+    { title: "Primeros pasos en Programación", date: "2021", description: "Comencé mi viaje en el mundo del desarrollo explorando lógica y algoritmos básicos.", category: "project" },
+    { title: "Especialización en Salesforce", date: "2022", description: "Inicié mi carrera como desarrollador en el ecosistema Salesforce, Apex, LWC y automatizaciones.", category: "work" },
+    { title: "Fundación de Arribas Guitars", date: "2023", description: "Comencé mi proyecto de Arribas Guitars para crear mi propia marca de guitarras eléctricas hechas a mano.", category: "work" },
+    { title: "Workshop Intelligence Dashboard", date: "2024", description: "Lanzamiento de una plataforma completa de gestión para talleres, integrando Supabase y análisis financiero.", category: "project" },
+    { title: "Showroom Digital Premium", date: "2024", description: "Desarrollo de una experiencia visual inmersiva para exhibición de productos artesanales de alta gama.", category: "project" },
+    { title: "Consultor & Developer en Nubestic", date: "2025 - Act.", description: "Nueva etapa profesional en Nubestic centrado en consultoría y desarrollo de soluciones Salesforce avanzadas.", category: "work" }
   ],
   en: [
-    { title: "Computer Engineering Degree", date: "2017", description: "Started my Computer Engineering studies at UPNA." },
-    { title: "First Steps in Programming", date: "2021", description: "I started my journey in the development world exploring basic logic and algorithms." },
-    { title: "Salesforce Specialization", date: "2022", description: "I began my career as a developer in the Salesforce ecosystem, Apex, LWC, and automations." },
-    { title: "Arribas Guitars Foundation", date: "2023", description: "Started my Arribas Guitars project to create my own brand of handmade electric guitars." },
-    { title: "Workshop Intelligence Dashboard", date: "2024", description: "Launched a complete workshop management platform, integrating Supabase and financial analysis." },
-    { title: "Premium Digital Showroom", date: "2024", description: "Developed an immersive visual experience for displaying high-end handcrafted products." },
+    { title: "Computer Engineering Degree", date: "2017", description: "Started my Computer Engineering studies at UPNA.", category: "work" },
+    { title: "First Steps in Programming", date: "2021", description: "I started my journey in the development world exploring basic logic and algorithms.", category: "project" },
+    { title: "Salesforce Specialization", date: "2022", description: "I began my career as a developer in the Salesforce ecosystem, Apex, LWC, and automations.", category: "work" },
+    { title: "Arribas Guitars Foundation", date: "2023", description: "Started my Arribas Guitars project to create my own brand of handmade electric guitars.", category: "work" },
+    { title: "Workshop Intelligence Dashboard", date: "2024", description: "Launched a complete workshop management platform, integrating Supabase and financial analysis.", category: "project" },
+    { title: "Premium Digital Showroom", date: "2024", description: "Developed an immersive visual experience for displaying high-end handcrafted products.", category: "project" },
+    { title: "Consultant & Developer at Nubestic", date: "2025 - Present", description: "New professional stage at Nubestic focusing on consulting and development of advanced Salesforce solutions.", category: "work" }
   ]
 };
 
