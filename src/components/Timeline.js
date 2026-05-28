@@ -50,19 +50,47 @@ const TimelineItem = ({ event, index }) => {
 };
 
 function Timeline({ events, t }) {
+  const [activeFilter, setActiveFilter] = useState('all');
   const [isExpanded, setIsExpanded] = useState(false);
-  const displayedEvents = isExpanded ? events : events.slice(0, 3);
+
+  const filters = t.filters || {
+    all: "Todos",
+    work: "Laboral",
+    projects: "Proyectos"
+  };
+
+  const filteredEvents = activeFilter === 'all'
+    ? events
+    : events.filter(event => event.category === activeFilter);
+
+  const displayedEvents = isExpanded ? filteredEvents : filteredEvents.slice(0, 3);
 
   return (
     <div className="timeline-container">
+      <div className="timeline-filters">
+        {Object.entries(filters).map(([key, label]) => (
+          <button
+            key={key}
+            className={`timeline-filter-btn ${activeFilter === key ? 'active' : ''}`}
+            onClick={() => {
+              setActiveFilter(key);
+              setIsExpanded(false); // Reset expansion for better UX
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
       <div className="timeline-line-v" />
+      
       <div className="timeline-items">
         {displayedEvents.map((event, index) => (
           <TimelineItem key={`${event.title}-${index}`} event={event} index={index} />
         ))}
       </div>
       
-      {events.length > 3 && (
+      {filteredEvents.length > 3 && (
         <div className="timeline-actions">
           <button 
             className="timeline-toggle-btn"
