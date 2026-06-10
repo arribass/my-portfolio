@@ -28,6 +28,8 @@ export const translations = {
     },
     projects: {
       title: "Proyectos",
+      viewGallery: "Galería",
+      viewGrid: "Cuadrícula",
       categories: {
         all: "Todos",
         salesforce: "Salesforce",
@@ -81,6 +83,8 @@ export const translations = {
     },
     projects: {
       title: "Projects",
+      viewGallery: "Gallery",
+      viewGrid: "Grid",
       categories: {
         all: "All",
         salesforce: "Salesforce",
@@ -130,6 +134,20 @@ export const timelineTranslations = {
 
 export const projectsTranslations = {
   es: [
+    {
+      title: "FUT Team Balancer",
+      description: "Balanceador y gestor inteligente de equipos de fútbol con pizarra táctica interactiva, selección de formaciones dinámicas y generador de listas formateadas para compartir por WhatsApp.",
+      tech: ["Next.js", "React", "CSS"],
+      link: "https://github.com/arribass/fut-team-builder",
+      image: "projects/fut-team-builder.png",
+      type: "github",
+      details: [
+        "Pizarra táctica interactiva con soporte para arrastrar y soltar (Drag & Drop) jugadores.",
+        "Soporte para formaciones dinámicas clásicas (4-4-2, 4-3-3, 3-5-2) y ampliadas (4-4-3, 4-5-2).",
+        "Generador de plantillas de WhatsApp con opciones de personalización (posiciones, reservas, notas de pie).",
+        "Arquitectura extensible preparada para integración con bot de WhatsApp mediante ID de organización."
+      ]
+    },
     {
       title: "Workshop Intelligence Dashboard",
       description: "Plataforma integral de gestión para talleres de luthería. Control de inventario, finanzas y seguimiento de producción.",
@@ -216,6 +234,20 @@ export const projectsTranslations = {
     },
   ],
   en: [
+    {
+      title: "FUT Team Balancer",
+      description: "Intelligent football team balancer and manager with an interactive tactical board, dynamic formation selection, and formatted list generator for WhatsApp sharing.",
+      tech: ["Next.js", "React", "CSS"],
+      link: "https://github.com/arribass/fut-team-builder",
+      image: "projects/fut-team-builder.png",
+      type: "github",
+      details: [
+        "Interactive tactical whiteboard with drag-and-drop player positioning.",
+        "Support for dynamic classic (4-4-2, 4-3-3, 3-5-2) and extended (4-4-3, 4-5-2) formations.",
+        "WhatsApp message template generator with customized formatting (positions, reserves, footer notes).",
+        "Extensible architecture designed for future automated WhatsApp Bot communication."
+      ]
+    },
     {
       title: "Workshop Intelligence Dashboard",
       description: "Comprehensive management platform for lutherie workshops. Inventory control, finances, and production tracking.",
