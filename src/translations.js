@@ -12,7 +12,7 @@ export const translations = {
       title: "Hola, soy Adrián 👋",
       role: "Analista y Developer de Salesforce en Nubestic",
       spec: "especializado en desarrollo con Apex, LWC, integraciones y arquitectura.",
-      passion: "Me apasiona construir soluciones limpias, scalables y bien estructuradas. Disfruto tanto la parte técnica como el diseño de soluciones.",
+      passion: "Me apasiona construir soluciones limpias, escalables y bien estructuradas. Disfruto tanto la parte técnica como el diseño de soluciones.",
       avatarAlt: "Avatar de Adrián",
       photoAlt: "Adrián Arribas"
     },
