@@ -103,6 +103,11 @@
   flex-direction: column;
   border: 1px solid rgba(0,0,0,0.03);
   cursor: pointer;
+  scrollbar-width: none; /* Firefox */
+}
+
+.project-card::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .project-card:hover {
@@ -135,6 +140,12 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  overflow: hidden;
+  scrollbar-width: none; /* Firefox */
+}
+
+.project-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .project-card h4 {
