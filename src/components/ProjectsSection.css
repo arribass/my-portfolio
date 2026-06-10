@@ -35,9 +35,22 @@
 }
 
 .projects-categories button.active {
-  background: #1e3c72;
   color: white;
+}
+
+.projects-categories button.filter-all.active {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   box-shadow: 0 8px 20px rgba(30, 60, 114, 0.25);
+}
+
+.projects-categories button.filter-salesforce.active {
+  background: linear-gradient(135deg, #00a1e0 0%, #0070d2 100%);
+  box-shadow: 0 8px 20px rgba(0, 112, 210, 0.25);
+}
+
+.projects-categories button.filter-web-app.active {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
 }
 
 .projects-categories button:hover:not(.active) {
@@ -385,4 +398,52 @@
   .modal-info-col h2 {
     font-size: 1.7rem;
   }
+}
+
+/* 🌟 Differentiated Styles for Salesforce vs Web-app Project Cards */
+
+/* --- SALESFORCE PROJECTS (Blue Sky/Branded Theme) --- */
+.project-card.salesforce:hover {
+  border-color: rgba(0, 112, 210, 0.2);
+}
+
+.project-card.salesforce .tech-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.project-card.salesforce .project-overlay {
+  background: rgba(0, 112, 210, 0.85);
+}
+
+.project-card.salesforce .project-link {
+  color: #0070d2;
+  border-top-color: #e0f2fe;
+}
+
+.project-card.salesforce .project-link:hover {
+  color: #004b87;
+}
+
+/* --- WEB-APP PROJECTS (Purple/Violet Theme) --- */
+.project-card.web-app:hover {
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.project-card.web-app .tech-tag {
+  background: #f3e8ff;
+  color: #6d28d9;
+}
+
+.project-card.web-app .project-overlay {
+  background: rgba(139, 92, 246, 0.85);
+}
+
+.project-card.web-app .project-link {
+  color: #8b5cf6;
+  border-top-color: #f3e8ff;
+}
+
+.project-card.web-app .project-link:hover {
+  color: #6d28d9;
 }

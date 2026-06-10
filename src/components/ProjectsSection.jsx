@@ -34,10 +34,10 @@ export default function ProjectsSection({ lang, t, projects, tModal }) {
       {/* 🔹 Categorías */}
       <div className="projects-filter-wrapper">
         <div className="projects-categories">
-          {categories.map((cat) => (
+          {categories.map((cat, idx) => (
             <button
               key={cat}
-              className={cat === activeCategory ? "active" : ""}
+              className={`${cat === activeCategory ? "active" : ""} filter-${idx === 0 ? "all" : idx === 1 ? "salesforce" : "web-app"}`}
               onClick={() => setActiveCategory(cat)}
             >
               {cat}
@@ -49,7 +49,11 @@ export default function ProjectsSection({ lang, t, projects, tModal }) {
       {/* 🔹 Grid de proyectos */}
       <div className="projects-grid">
         {filteredProjects.map((p, i) => (
-          <div key={i} className="project-card" onClick={() => setSelectedProject(p)}>
+          <div 
+            key={i} 
+            className={`project-card ${p.tech.some(t => ["Apex", "Flow", "Salesforce", "LWC"].includes(t)) ? "salesforce" : "web-app"}`} 
+            onClick={() => setSelectedProject(p)}
+          >
             <div className="project-image">
               <img src={`${process.env.PUBLIC_URL}/${p.image}`} alt={p.title} />
               <div className="project-overlay">
