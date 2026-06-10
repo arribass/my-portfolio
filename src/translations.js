@@ -23,7 +23,7 @@ export const translations = {
       filters: {
         all: "Todos",
         work: "Laboral",
-        projects: "Proyectos"
+        project: "Proyectos"
       }
     },
     projects: {
@@ -76,7 +76,7 @@ export const translations = {
       filters: {
         all: "All",
         work: "Work",
-        projects: "Projects"
+        project: "Projects"
       }
     },
     projects: {
@@ -112,7 +112,7 @@ export const timelineTranslations = {
     { title: "Grado en Ingeniería Informática", date: "2017", description: "Comencé mis estudios de Ingeniería Informática en la UPNA.", category: "work" },
     { title: "Primeros pasos en Programación", date: "2021", description: "Comencé mi viaje en el mundo del desarrollo explorando lógica y algoritmos básicos.", category: "project" },
     { title: "Especialización en Salesforce", date: "2022", description: "Inicié mi carrera como desarrollador en el ecosistema Salesforce, Apex, LWC y automatizaciones.", category: "work" },
-    { title: "Fundación de Arribas Guitars", date: "2023", description: "Comencé mi proyecto de Arribas Guitars para crear mi propia marca de guitarras eléctricas hechas a mano.", category: "work" },
+    { title: "Fundación de Arribas Guitars", date: "2023", description: "Comencé mi proyecto de Arribas Guitars para crear mi propia marca de guitarras eléctricas hechas a mano.", category: "project" },
     { title: "Workshop Intelligence Dashboard", date: "2024", description: "Lanzamiento de una plataforma completa de gestión para talleres, integrando Supabase y análisis financiero.", category: "project" },
     { title: "Showroom Digital Premium", date: "2024", description: "Desarrollo de una experiencia visual inmersiva para exhibición de productos artesanales de alta gama.", category: "project" },
     { title: "Consultor & Developer en Nubestic", date: "2025 - Act.", description: "Nueva etapa profesional en Nubestic centrado en consultoría y desarrollo de soluciones Salesforce avanzadas.", category: "work" }
@@ -121,7 +121,7 @@ export const timelineTranslations = {
     { title: "Computer Engineering Degree", date: "2017", description: "Started my Computer Engineering studies at UPNA.", category: "work" },
     { title: "First Steps in Programming", date: "2021", description: "I started my journey in the development world exploring basic logic and algorithms.", category: "project" },
     { title: "Salesforce Specialization", date: "2022", description: "I began my career as a developer in the Salesforce ecosystem, Apex, LWC, and automations.", category: "work" },
-    { title: "Arribas Guitars Foundation", date: "2023", description: "Started my Arribas Guitars project to create my own brand of handmade electric guitars.", category: "work" },
+    { title: "Arribas Guitars Foundation", date: "2023", description: "Started my Arribas Guitars project to create my own brand of handmade electric guitars.", category: "project" },
     { title: "Workshop Intelligence Dashboard", date: "2024", description: "Launched a complete workshop management platform, integrating Supabase and financial analysis.", category: "project" },
     { title: "Premium Digital Showroom", date: "2024", description: "Developed an immersive visual experience for displaying high-end handcrafted products.", category: "project" },
     { title: "Consultant & Developer at Nubestic", date: "2025 - Present", description: "New professional stage at Nubestic focusing on consulting and development of advanced Salesforce solutions.", category: "work" }

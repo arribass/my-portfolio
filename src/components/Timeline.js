@@ -1,5 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { FaBriefcase, FaGraduationCap, FaGuitar, FaCode, FaLaptopCode } from 'react-icons/fa';
 import './Timeline.css';
+
+const getEventIcon = (event) => {
+  const title = event.title.toLowerCase();
+  if (title.includes('grado') || title.includes('degree') || title.includes('universidad')) {
+    return <FaGraduationCap />;
+  }
+  if (title.includes('guitar') || title.includes('luthier')) {
+    return <FaGuitar />;
+  }
+  if (title.includes('primero') || title.includes('first steps') || title.includes('programación') || title.includes('programming')) {
+    return <FaCode />;
+  }
+  if (event.category === 'work') {
+    return <FaBriefcase />;
+  }
+  return <FaLaptopCode />;
+};
 
 const TimelineItem = ({ event, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,14 +48,14 @@ const TimelineItem = ({ event, index }) => {
 
   return (
     <div 
-      className={`timeline-item ${isVisible ? 'in-view' : ''}`} 
+      className={`timeline-item ${event.category} ${isVisible ? 'in-view' : ''}`} 
       key={index}
       ref={itemRef}
     >
       <div className="timeline-dot" />
       <div className="timeline-content">
         <div className="timeline-header">
-          {event.icon && <div className="timeline-icon">{event.icon}</div>}
+          <div className="timeline-icon">{getEventIcon(event)}</div>
           <div className="timeline-details">
             <span className="timeline-date">{event.date}</span>
             <h4>{event.title}</h4>
@@ -56,7 +74,7 @@ function Timeline({ events, t }) {
   const filters = t.filters || {
     all: "Todos",
     work: "Laboral",
-    projects: "Proyectos"
+    project: "Proyectos"
   };
 
   const filteredEvents = activeFilter === 'all'
@@ -71,7 +89,7 @@ function Timeline({ events, t }) {
         {Object.entries(filters).map(([key, label]) => (
           <button
             key={key}
-            className={`timeline-filter-btn ${activeFilter === key ? 'active' : ''}`}
+            className={`timeline-filter-btn filter-${key} ${activeFilter === key ? 'active' : ''}`}
             onClick={() => {
               setActiveFilter(key);
               setIsExpanded(false); // Reset expansion for better UX

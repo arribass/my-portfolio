@@ -44,11 +44,24 @@
 }
 
 .timeline-filter-btn.active {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   color: white;
   border-color: transparent;
-  box-shadow: 0 10px 30px rgba(42, 82, 152, 0.35);
   transform: translateY(-2px) scale(1.03);
+}
+
+.timeline-filter-btn.filter-all.active {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  box-shadow: 0 10px 30px rgba(42, 82, 152, 0.35);
+}
+
+.timeline-filter-btn.filter-work.active {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.35);
+}
+
+.timeline-filter-btn.filter-project.active {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
 }
 
 .timeline-filter-btn:active {
@@ -309,4 +322,64 @@
     width: 100%;
     padding: 14px;
   }
+}
+
+/* 🌟 Differentiated Styles for Work vs Project Items */
+
+/* --- WORK CATEGORY (Teal/Emerald Theme) --- */
+.timeline-item.work .timeline-dot {
+  background: #0d9488;
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+}
+
+.timeline-item.work:hover .timeline-dot {
+  background: #0f766e;
+  box-shadow: 0 0 20px rgba(15, 118, 110, 0.5);
+}
+
+.timeline-item.work .timeline-icon {
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  color: #0f766e;
+}
+
+.timeline-item.work:hover .timeline-icon {
+  background: #0f766e;
+  color: white;
+}
+
+.timeline-item.work .timeline-date {
+  color: #0d9488;
+}
+
+.timeline-item.work .timeline-content:hover {
+  border-color: rgba(13, 148, 136, 0.2);
+}
+
+/* --- PROJECT CATEGORY (Purple/Indigo Theme) --- */
+.timeline-item.project .timeline-dot {
+  background: #8b5cf6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.timeline-item.project:hover .timeline-dot {
+  background: #6d28d9;
+  box-shadow: 0 0 20px rgba(109, 40, 217, 0.5);
+}
+
+.timeline-item.project .timeline-icon {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  color: #6d28d9;
+}
+
+.timeline-item.project:hover .timeline-icon {
+  background: #6d28d9;
+  color: white;
+}
+
+.timeline-item.project .timeline-date {
+  color: #8b5cf6;
+}
+
+.timeline-item.project .timeline-content:hover {
+  border-color: rgba(139, 92, 246, 0.2);
 }
