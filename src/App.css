@@ -497,135 +497,171 @@ html {
 /* 🛠️ Salesforce Utilities - Terminal Style */
 .utilities-grid {
   display: grid;
-  grid-template-columns: 1fr; /* 1xN Layout */
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
   margin-top: 40px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.repo-card.terminal {
-  background: #1a1a1a;
+.salesforce-card {
+  background: #ffffff;
+  border: 1px solid #dddbda;
   border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  text-align: left;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
 }
 
-.repo-card.terminal:hover {
-  transform: translateY(-8px);
-  border-color: #2a5298;
-  box-shadow: 0 15px 45px rgba(42, 82, 152, 0.2);
+.salesforce-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0176d3, #00b4f7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.repo-window-header {
-  background: #333;
-  padding: 10px 15px;
+.salesforce-card:hover {
+  transform: translateY(-6px);
+  border-color: #0176d3;
+  box-shadow: 0 12px 24px rgba(1, 118, 211, 0.15);
+}
+
+.salesforce-card:hover::before {
+  opacity: 1;
+}
+
+.sf-card-header {
+  padding: 22px 24px 14px 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid #444;
+  justify-content: space-between;
+  border-bottom: 1px solid #f3f2f1;
 }
 
-.repo-window-header .dot {
-  width: 12px;
-  height: 12px;
+.sf-card-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sf-logo-icon {
+  color: #0176d3;
+  font-size: 28px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.salesforce-card:hover .sf-logo-icon {
+  transform: scale(1.15);
+}
+
+.sf-card-title {
+  color: #080707;
+  font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.sf-github-link {
+  color: #747474;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding: 4px;
   border-radius: 50%;
 }
 
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-
-.window-title {
-  color: #888;
-  font-size: 0.75rem;
-  font-family: 'Fira Code', monospace;
-  margin-left: auto;
+.sf-github-link:hover {
+  color: #0176d3;
+  background-color: rgba(1, 118, 211, 0.05);
+  transform: scale(1.05);
 }
 
-.repo-body {
-  padding: 24px;
+.sf-card-body {
+  padding: 20px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
-.repo-card.terminal .repo-header h3 {
-  color: #fff;
-  font-family: 'Fira Code', monospace;
-  margin: 0;
-  font-size: 1.25rem;
-  text-align: left;
+.sf-card-desc {
+  color: #3e3e3c;
+  font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+  min-height: 48px;
 }
 
-.repo-card.terminal .repo-tag {
-  background: rgba(42, 82, 152, 0.2);
-  color: #a0c4ff;
-  border: 1px solid rgba(42, 82, 152, 0.3);
-}
-
-.repo-terminal-content {
-  margin: 20px 0;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  text-align: left;
-}
-
-.repo-terminal-content p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-}
-
-.repo-terminal-content p:first-child,
-.repo-terminal-content p:nth-child(3) {
-  color: #27c93f; /* Green prompt */
-}
-
-.terminal-output {
-  color: #ddd;
-  padding-left: 15px;
-  margin-bottom: 10px !important;
-}
-
-.terminal-list {
+.sf-features-list {
   list-style: none;
   padding: 0;
-  margin: 5px 0 0 15px;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
 }
 
-.terminal-list li {
-  color: #a0c4ff;
+.sf-features-list li {
+  color: #514f4d;
+  font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.85rem;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
 }
 
-.repo-card.terminal .repo-badges {
+.sf-features-list li::before {
+  content: '✓';
+  color: #0176d3;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sf-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #f3f2f1;
+}
+
+.sf-card-badges {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
 }
 
-.repo-card.terminal .repo-footer {
-  padding: 15px 24px;
-  background: #222;
-  border-top: 1px solid #333;
-  text-align: left;
-}
-
-.terminal-link {
-  color: #fff;
+.sf-card-link {
+  color: #0176d3;
   text-decoration: none;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.9rem;
-  display: block;
-  transition: color 0.2s;
+  font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
 }
 
-.terminal-link:hover {
-  color: #27c93f;
+.sf-card-link:hover {
+  color: #014486;
+  text-decoration: underline;
+  transform: translateX(2px);
 }
 
 .profile-image {
