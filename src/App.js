@@ -14,9 +14,9 @@ import {
   FaFilePdf
 } from "react-icons/fa";
 
-// import {
-//   SiSalesforce,
-// } from "react-icons/si";
+import {
+  SiSalesforce,
+} from "react-icons/si";
 
 /**
  * Componente Section que:
@@ -174,120 +174,132 @@ function App() {
 
         <Section id="code" title={t.utilities.title}>
           <div className="utilities-grid">
-            <div className="repo-card terminal">
-              <div className="repo-window-header">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-                <span className="window-title">reusable-lookup.sh</span>
-              </div>
-              <div className="repo-body">
-                <div className="repo-header">
-                  <h3>Reusable Lookup</h3>
-                  <span className="repo-tag">Salesforce</span>
+            {/* Reusable Lookup */}
+            <div className="salesforce-card">
+              <div className="sf-card-header">
+                <div className="sf-card-title-wrapper">
+                  <SiSalesforce className="sf-logo-icon" />
+                  <h3 className="sf-card-title">Reusable Lookup</h3>
                 </div>
-                <div className="repo-terminal-content">
-                  <p>$ {t.utilities.description}</p>
-                  <p className="terminal-output">{lang === 'es' ? 'Componente versátil para búsquedas dinámicas.' : 'Versatile component for dynamic searching.'}</p>
-                  <p>$ {t.utilities.features}</p>
-                  <ul className="terminal-list">
-                    <li>{" > "} {lang === 'es' ? 'Soporte multiobjeto' : 'Multi-object support'}</li>
-                    <li>{" > "} {lang === 'es' ? 'Motor dinámico SOSL/SOQL' : 'Dynamic SOSL/SOQL engine'}</li>
-                    <li>{" > "} {lang === 'es' ? 'Plantillas personalizables' : 'Customizable templates'}</li>
-                  </ul>
-                </div>
-                <div className="repo-badges">
-                  <TechBadge label="Apex" variant="backend" />
-                  <TechBadge label="LWC" variant="frontend" />
-                </div>
-              </div>
-              <div className="repo-footer">
                 <a
                   href="https://github.com/arribass/reusable-lookup"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="terminal-link"
+                  className="sf-github-link"
+                  aria-label="GitHub Repository"
                 >
-                  $ {t.utilities.clone}
+                  <FaGithub size={20} />
                 </a>
+              </div>
+              <div className="sf-card-body">
+                <p className="sf-card-desc">
+                  {lang === 'es' ? 'Componente versátil para búsquedas dinámicas.' : 'Versatile component for dynamic searching.'}
+                </p>
+                <ul className="sf-features-list">
+                  <li>{lang === 'es' ? 'Soporte multiobjeto' : 'Multi-object support'}</li>
+                  <li>{lang === 'es' ? 'Motor dinámico SOSL/SOQL' : 'Dynamic SOSL/SOQL engine'}</li>
+                  <li>{lang === 'es' ? 'Plantillas personalizables' : 'Customizable templates'}</li>
+                </ul>
+                <div className="sf-card-footer">
+                  <div className="sf-card-badges">
+                    <TechBadge label="Apex" variant="backend" />
+                    <TechBadge label="LWC" variant="frontend" />
+                  </div>
+                  <a
+                    href="https://github.com/arribass/reusable-lookup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sf-card-link"
+                  >
+                    {lang === 'es' ? 'Ver Código' : 'View Code'}
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="repo-card terminal">
-              <div className="repo-window-header">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-                <span className="window-title">reusable-picklist.sh</span>
-              </div>
-              <div className="repo-body">
-                <div className="repo-header">
-                  <h3>Reusable Picklist</h3>
-                  <span className="repo-tag">Salesforce</span>
+            {/* Reusable Picklist */}
+            <div className="salesforce-card">
+              <div className="sf-card-header">
+                <div className="sf-card-title-wrapper">
+                  <SiSalesforce className="sf-logo-icon" />
+                  <h3 className="sf-card-title">Reusable Picklist</h3>
                 </div>
-                <div className="repo-terminal-content">
-                  <p>$ {t.utilities.description}</p>
-                  <p className="terminal-output">{lang === 'es' ? 'Picklist ligero y personalizable.' : 'Lightweight customizable picklist.'}</p>
-                  <p>$ {t.utilities.features}</p>
-                  <ul className="terminal-list">
-                    <li>{" > "} {lang === 'es' ? 'Compatible con LWC y Flow' : 'LWC & Flow compatible'}</li>
-                    <li>{" > "} {lang === 'es' ? 'Basado en metadatos' : 'Metadata-driven'}</li>
-                    <li>{" > "} {lang === 'es' ? 'Configuración sin código' : 'No-code configuration'}</li>
-                  </ul>
-                </div>
-                <div className="repo-badges">
-                  <TechBadge label="LWC" variant="frontend" />
-                  <TechBadge label="Apex" variant="backend" />
-                </div>
-              </div>
-              <div className="repo-footer">
                 <a
                   href="https://github.com/arribass/reusable-picklist"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="terminal-link"
+                  className="sf-github-link"
+                  aria-label="GitHub Repository"
                 >
-                  $ {t.utilities.clone}
+                  <FaGithub size={20} />
                 </a>
+              </div>
+              <div className="sf-card-body">
+                <p className="sf-card-desc">
+                  {lang === 'es' ? 'Picklist ligero y personalizable.' : 'Lightweight customizable picklist.'}
+                </p>
+                <ul className="sf-features-list">
+                  <li>{lang === 'es' ? 'Compatible con LWC y Flow' : 'LWC & Flow compatible'}</li>
+                  <li>{lang === 'es' ? 'Basado en metadatos' : 'Metadata-driven'}</li>
+                  <li>{lang === 'es' ? 'Configuración sin código' : 'No-code configuration'}</li>
+                </ul>
+                <div className="sf-card-footer">
+                  <div className="sf-card-badges">
+                    <TechBadge label="LWC" variant="frontend" />
+                    <TechBadge label="Apex" variant="backend" />
+                  </div>
+                  <a
+                    href="https://github.com/arribass/reusable-picklist"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sf-card-link"
+                  >
+                    {lang === 'es' ? 'Ver Código' : 'View Code'}
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="repo-card terminal">
-              <div className="repo-window-header">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-                <span className="window-title">record-validator.sh</span>
-              </div>
-              <div className="repo-body">
-                <div className="repo-header">
-                  <h3>Flow Action Validator</h3>
-                  <span className="repo-tag">Salesforce</span>
+            {/* Flow Action Validator */}
+            <div className="salesforce-card">
+              <div className="sf-card-header">
+                <div className="sf-card-title-wrapper">
+                  <SiSalesforce className="sf-logo-icon" />
+                  <h3 className="sf-card-title">Flow Action Validator</h3>
                 </div>
-                <div className="repo-terminal-content">
-                  <p>$ {t.utilities.description}</p>
-                  <p className="terminal-output">{lang === 'es' ? 'Validación dinámica de campos de registro.' : 'Dynamic record field validation.'}</p>
-                  <p>$ {t.utilities.features}</p>
-                  <ul className="terminal-list">
-                    <li>{" > "} {lang === 'es' ? 'Motor de condiciones dinámico' : 'Dynamic condition engine'}</li>
-                    <li>{" > "} {lang === 'es' ? 'Mensajes de error personalizados' : 'Custom error messaging'}</li>
-                    <li>{" > "} {lang === 'es' ? 'Seguro para procesamiento por lotes' : 'Bulk-safe validation'}</li>
-                  </ul>
-                </div>
-                <div className="repo-badges">
-                  <TechBadge label="Apex" variant="backend" />
-                  <TechBadge label="Flow" variant="frontend" />
-                </div>
-              </div>
-              <div className="repo-footer">
                 <a
                   href="https://github.com/arribass/flow-Action-Record-Validator"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="terminal-link"
+                  className="sf-github-link"
+                  aria-label="GitHub Repository"
                 >
-                  $ {t.utilities.clone}
+                  <FaGithub size={20} />
                 </a>
+              </div>
+              <div className="sf-card-body">
+                <p className="sf-card-desc">
+                  {lang === 'es' ? 'Validación dinámica de campos de registro.' : 'Dynamic record field validation.'}
+                </p>
+                <ul className="sf-features-list">
+                  <li>{lang === 'es' ? 'Motor de condiciones dinámico' : 'Dynamic condition engine'}</li>
+                  <li>{lang === 'es' ? 'Mensajes de error personalizados' : 'Custom error messaging'}</li>
+                  <li>{lang === 'es' ? 'Seguro para procesamiento por lotes' : 'Bulk-safe validation'}</li>
+                </ul>
+                <div className="sf-card-footer">
+                  <div className="sf-card-badges">
+                    <TechBadge label="Apex" variant="backend" />
+                    <TechBadge label="Flow" variant="frontend" />
+                  </div>
+                  <a
+                    href="https://github.com/arribass/flow-Action-Record-Validator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sf-card-link"
+                  >
+                    {lang === 'es' ? 'Ver Código' : 'View Code'}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
