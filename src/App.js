@@ -11,7 +11,10 @@ import { translations, timelineTranslations, projectsTranslations } from "./tran
 
 import {
   FaGithub,
-  FaFilePdf
+  FaFilePdf,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowUp
 } from "react-icons/fa";
 
 import {
@@ -306,19 +309,75 @@ function App() {
         </Section>
         <footer className="footer">
           <div className="footer-content">
-            <p>© {new Date().getFullYear()} Adrian Arribas</p>
-            <div className="contact">
-              <h4>{t.footer.contact}</h4>
-              <p>{t.footer.desc}</p>
-              <a href="mailto:adri47arribas@gmail.com">{t.footer.email}</a> |{" "}
-              <a
-                href="https://www.linkedin.com/in/adrian-arribas-garcia-5470791b4/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
+            <div className="footer-grid">
+              
+              {/* Col 1: Bio / Brand */}
+              <div className="footer-col brand-col">
+                <span className="footer-brand">Adrián Arribas</span>
+                <p className="footer-bio">
+                  {lang === 'es' 
+                    ? 'Desarrollador y Analista Salesforce especializado en crear soluciones escalables, limpias y de alto rendimiento.' 
+                    : 'Salesforce Developer & Analyst specializing in creating scalable, clean, and high-performance solutions.'}
+                </p>
+              </div>
+
+              {/* Col 2: Navigation Links */}
+              <div className="footer-col links-col">
+                <h4>{lang === 'es' ? 'Navegación' : 'Navigation'}</h4>
+                <ul>
+                  <li><a href="#about">{t.nav.about}</a></li>
+                  <li><a href="#experience">{t.nav.experience}</a></li>
+                  <li><a href="#projects">{t.nav.projects}</a></li>
+                  <li><a href="#code">{t.nav.code}</a></li>
+                </ul>
+              </div>
+
+              {/* Col 3: Contact Info */}
+              <div className="footer-col contact-col">
+                <h4>{t.footer.contact}</h4>
+                <p className="footer-desc">{t.footer.desc}</p>
+                <div className="footer-contact-links">
+                  <a href="mailto:adri47arribas@gmail.com" className="footer-contact-item">
+                    <FaEnvelope />
+                    <span>adri47arribas@gmail.com</span>
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/adrian-arribas-garcia-5470791b4/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="footer-contact-item"
+                  >
+                    <FaLinkedin />
+                    <span>LinkedIn</span>
+                  </a>
+                  <a 
+                    href="https://github.com/arribass" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="footer-contact-item"
+                  >
+                    <FaGithub />
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+
             </div>
+
+            {/* Bottom Bar: Copyright & Scroll to Top */}
+            <div className="footer-bottom">
+              <p className="copyright">
+                © {new Date().getFullYear()} Adrián Arribas. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+              </p>
+              <button 
+                className="scroll-to-top" 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                aria-label="Scroll to top"
+              >
+                <FaArrowUp />
+              </button>
+            </div>
+
           </div>
         </footer>
       </main>
