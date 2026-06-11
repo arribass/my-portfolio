@@ -5,6 +5,7 @@ export const translations = {
       experience: "Trayectoria",
       projects: "Proyectos",
       code: "Mejores repos",
+      tournaments: "Torneos (Beta)",
       source: "Código fuente",
       cv: "Mi CV"
     },
@@ -52,6 +53,9 @@ export const translations = {
       github: "Ver en GitHub",
       demo: "Abrir Demo",
       close: "Cerrar"
+    },
+    tournaments: {
+      title: "Generador de Torneos (Beta)"
     }
   },
   en: {
@@ -60,6 +64,7 @@ export const translations = {
       experience: "Experience",
       projects: "Projects",
       code: "Best repos",
+      tournaments: "Tournaments (Beta)",
       source: "Source code",
       cv: "My CV"
     },
@@ -107,6 +112,9 @@ export const translations = {
       github: "View on GitHub",
       demo: "Open Demo",
       close: "Close"
+    },
+    tournaments: {
+      title: "Tournament Generator (Beta)"
     }
   }
 };
