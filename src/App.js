@@ -5,7 +5,6 @@ import AboutSection from "./components/AboutSection";
 import TechBadge from "./components/TechBadge";
 import Timeline from "./components/Timeline";
 import ProjectsSection from "./components/ProjectsSection";
-import TournamentsSection from "./components/TournamentsSection";
 import { translations, timelineTranslations, projectsTranslations } from "./translations";
 // import Section from "./components/Section";
 
@@ -130,7 +129,6 @@ function App() {
             <a href="#experience">{t.nav.experience}</a>
             <a href="#projects">{t.nav.projects}</a>
             <a href="#code">{t.nav.code}</a>
-            <a href="#tournaments">{t.nav.tournaments}</a>
           </nav>
 
           {/* RIGHT - GitHub */}
@@ -309,12 +307,6 @@ function App() {
             </div>
           </div>
         </Section>
-
-        {/* Torneos Beta Section */}
-        <Section id="tournaments" title={t.tournaments.title}>
-          <TournamentsSection lang={lang} t={t.tournaments} />
-        </Section>
-
         <footer className="footer">
           <div className="footer-content">
             <div className="footer-grid">
@@ -337,7 +329,6 @@ function App() {
                   <li><a href="#experience">{t.nav.experience}</a></li>
                   <li><a href="#projects">{t.nav.projects}</a></li>
                   <li><a href="#code">{t.nav.code}</a></li>
-                  <li><a href="#tournaments">{t.nav.tournaments}</a></li>
                 </ul>
               </div>
 
