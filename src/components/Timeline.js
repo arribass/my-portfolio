@@ -68,7 +68,7 @@ const TimelineItem = ({ event, index }) => {
 };
 
 function Timeline({ events, t }) {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('work');
   const [isExpanded, setIsExpanded] = useState(false);
 
   const filters = t.filters || {
@@ -84,7 +84,7 @@ function Timeline({ events, t }) {
   const displayedEvents = isExpanded ? filteredEvents : filteredEvents.slice(0, 3);
 
   return (
-    <div className="timeline-container">
+    <div className={`timeline-container ${activeFilter === 'all' ? 'timeline-compact' : ''}`}>
       <div className="timeline-filters">
         {Object.entries(filters).map(([key, label]) => (
           <button

@@ -4,7 +4,7 @@ export const translations = {
       about: "Sobre mí",
       experience: "Trayectoria",
       projects: "Proyectos",
-      code: "Mejores repos",
+      code: "SF Utilities",
       source: "Código fuente",
       cv: "Mi CV"
     },
@@ -59,7 +59,7 @@ export const translations = {
       about: "About me",
       experience: "Experience",
       projects: "Projects",
-      code: "Best repos",
+      code: "SF Utilities",
       source: "Source code",
       cv: "My CV"
     },

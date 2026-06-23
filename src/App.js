@@ -307,7 +307,8 @@ function App() {
             </div>
           </div>
         </Section>
-        <footer className="footer">
+      </main>
+      <footer className="footer">
           <div className="footer-content">
             <div className="footer-grid">
               
@@ -380,7 +381,6 @@ function App() {
 
           </div>
         </footer>
-      </main>
 
     </div>
   );
