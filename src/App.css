@@ -90,7 +90,7 @@ html {
   margin-bottom: 15px;
 }
 
-/* 🌟 Modern Top Bar (Glassmorphism) */
+/* 🌟 Modern Top Bar (Glassmorphism - Dark Blue Footer Theme) */
 .top-bar {
   position: fixed;
   top: 0;
@@ -98,15 +98,15 @@ html {
   width: 100%;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(15, 23, 42, 0.75); /* Matching #0f172a with transparency */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .top-bar.scrolled {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   padding: 8px 0;
 }
 
@@ -129,7 +129,7 @@ html {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.08);
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 0.7rem;
@@ -141,19 +141,23 @@ html {
   border: none;
   cursor: pointer;
   padding: 2px 4px;
-  color: #888;
+  color: #94a3b8;
   transition: all 0.2s ease;
   font-family: inherit;
   font-weight: 700;
   line-height: 1;
 }
 
+.lang-switcher button:hover {
+  color: #cbd5e1;
+}
+
 .lang-switcher button.active {
-  color: #1a2a6c;
+  color: #38bdf8;
 }
 
 .lang-switcher .separator {
-  color: #ddd;
+  color: rgba(255, 255, 255, 0.15);
   font-weight: 400;
 }
 
@@ -162,11 +166,11 @@ html {
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: -0.5px;
-  color: #1a202c;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -177,7 +181,7 @@ html {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background: #2a5298;
+  background: #38bdf8;
   border-radius: 50%;
 }
 
@@ -188,7 +192,7 @@ html {
 }
 
 .nav-center a {
-  color: #4a5568;
+  color: #94a3b8;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -204,12 +208,12 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background: #2a5298;
+  background: #38bdf8;
   transition: width 0.3s ease;
 }
 
 .nav-center a:hover {
-  color: #2a5298;
+  color: #f8fafc;
 }
 
 .nav-center a:hover::after {
@@ -237,27 +241,30 @@ html {
 }
 
 .github-link {
-  background: #1a202c;
+  background: rgba(255, 255, 255, 0.08);
   color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .github-link:hover {
-  background: #2d3748;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.05);
 }
 
 .cv-link {
   background: white;
-  color: #2a5298 !important;
-  border: 1px solid rgba(42, 82, 152, 0.2);
+  color: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cv-link:hover {
-  background: #f8fafc;
-  border-color: #2a5298;
+  background: #38bdf8;
+  color: #0f172a !important;
+  border-color: #38bdf8;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(42, 82, 152, 0.15);
+  box-shadow: 0 6px 15px rgba(56, 189, 248, 0.25);
 }
 
 /* Base adjustment for fixed header */
