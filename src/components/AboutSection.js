@@ -80,13 +80,6 @@ function AboutSection({ t, lang }) {
             <p>Actions, Branching</p>
           </div>
         </div>
-
-        <div className="about-tags">
-          <span>Apex</span>
-          <span>LWC</span>
-          <span>Integraciones</span>
-          <span>React</span>
-        </div>
       </div>
     </div>
   );
