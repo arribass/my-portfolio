@@ -119,7 +119,7 @@ export const timelineTranslations = {
   ],
   en: [
     { title: "Computer Engineering Degree", date: "2017", description: "Started my Computer Engineering studies at UPNA.", category: "work" },
-    { title: "First Steps in Programming", date: "2021", description: "I started my journey in the development world exploring basic logic and algorithms.", category: "project" },
+    { title: "First Steps in Coding", date: "2021", description: "I started my journey in the development world exploring basic logic and algorithms.", category: "project" },
     { title: "Salesforce Specialization", date: "2022", description: "I began my career as a developer in the Salesforce ecosystem, Apex, LWC, and automations.", category: "work" },
     { title: "Arribas Guitars Foundation", date: "2023", description: "Started my Arribas Guitars project to create my own brand of handmade electric guitars.", category: "project" },
     { title: "Workshop Intelligence Dashboard", date: "2024", description: "Launched a complete workshop management platform, integrating Supabase and financial analysis.", category: "project" },
