@@ -105,7 +105,16 @@ function App() {
 
           {/* LEFT - Name & Language Toggle */}
           <div className="nav-left">
-            <span className="brand">Adrián Arribas</span>
+            <div className="brand-container">
+              <div className={`brand-icon-dot ${scrolled ? 'has-avatar' : ''}`}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/Adrian_Arribas.png`}
+                  alt="Adrián Arribas"
+                  className="brand-avatar"
+                />
+              </div>
+              <span className="brand">Adrián Arribas</span>
+            </div>
             <div className="lang-switcher">
               <button
                 className={lang === 'es' ? 'active' : ''}
