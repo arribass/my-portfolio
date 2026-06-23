@@ -102,18 +102,18 @@ export default function ProjectsSection({ lang, t, projects, tModal }) {
           <button
             className={viewMode === "gallery" ? "active" : ""}
             onClick={() => setViewMode("gallery")}
-            title={t.viewGallery}
+            title={lang === "es" ? "Vista Galería" : "Gallery View"}
+            aria-label={lang === "es" ? "Vista Galería" : "Gallery View"}
           >
             <FaImages />
-            <span>{t.viewGallery}</span>
           </button>
           <button
             className={viewMode === "grid" ? "active" : ""}
             onClick={() => setViewMode("grid")}
-            title={t.viewGrid}
+            title={lang === "es" ? "Vista Cuadrícula" : "Grid View"}
+            aria-label={lang === "es" ? "Vista Cuadrícula" : "Grid View"}
           >
             <FaThLarge />
-            <span>{t.viewGrid}</span>
           </button>
         </div>
       </div>

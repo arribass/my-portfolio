@@ -28,8 +28,6 @@ export const translations = {
     },
     projects: {
       title: "Proyectos",
-      viewGallery: "Galería",
-      viewGrid: "Cuadrícula",
       categories: {
         all: "Todos",
         salesforce: "Salesforce",
@@ -83,8 +81,6 @@ export const translations = {
     },
     projects: {
       title: "Projects",
-      viewGallery: "Gallery",
-      viewGrid: "Grid",
       categories: {
         all: "All",
         salesforce: "Salesforce",
